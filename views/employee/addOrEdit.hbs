@@ -1,0 +1,35 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/librarian" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Full Name" value="{{employee.fullName}}">
+        <div class="text-danger">
+            {{employee.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+        <div class="text-danger">
+            {{employee.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" value="{{employee.password}}">
+             <div class="text-danger">
+            {{employee.passwordError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>ID number</label>
+            <input type="number" class="form-control" name="idnumber" placeholder="Id Number" value="{{employee.idnumber}}">
+             <div class="text-danger">
+            {{employee.idnumberError}}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/librarian/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>

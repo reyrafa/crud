@@ -1,0 +1,24 @@
+<h3><a class="btn btn-secondary" href="/librarian"><i class="fa fa-plus"></i> Create New</a> Personnel List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Id Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.idnumber}}</td>
+            <td col>
+                <a href="/librarian/{{this._id}}"><i class="fa fa-pencil fa-lg"></i></a>
+                <a href="/librarian/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
